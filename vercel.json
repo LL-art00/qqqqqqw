@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/login",
+      "destination": "/api/login.js"
+    },
+    {
+      "source": "/api/logout",
+      "destination": "/api/logout.js"
+    },
+    {
+      "source": "/api/me",
+      "destination": "/api/me.js"
+    },
+    {
+      "source": "/api/generate",
+      "destination": "/api/generate.js"
+    }
+  ]
+}
