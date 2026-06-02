@@ -1,0 +1,14 @@
+{
+  "name": "ai-master-share-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Password-protected ai大师 shared web app.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

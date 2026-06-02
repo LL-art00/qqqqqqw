@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai大师工作台</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="login-view" id="loginView">
+      <form class="login-panel" id="loginForm">
+        <div class="brand login-brand">
+          <div class="brand-mark" aria-hidden="true">AI</div>
+          <div>
+            <h1>ai大师共享版</h1>
+            <p>输入密码后使用分类工作台</p>
+          </div>
+        </div>
+        <label>
+          <span>访问密码</span>
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="请输入你设置的密码" />
+        </label>
+        <button class="primary-button" type="submit">进入工作台</button>
+        <p class="status-text" id="loginStatus"></p>
+      </form>
+    </section>
+
+    <div class="app-shell is-hidden" id="appShell">
+      <aside class="sidebar" aria-label="分工窗口">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">AI</div>
+          <div>
+            <h1>ai大师</h1>
+            <p>共享版工作台</p>
+          </div>
+        </div>
+        <nav class="nav-list" id="navList"></nav>
+      </aside>
+
+      <main class="workspace">
+        <section class="topbar">
+          <div>
+            <p class="eyebrow">默认技能：ai大师</p>
+            <h2 id="pageTitle">AI视觉提示词</h2>
+          </div>
+          <div class="top-actions">
+            <button class="ghost-button" id="copyRouteBtn" type="button">复制当前窗口网址</button>
+            <button class="ghost-button" id="logoutBtn" type="button">退出</button>
+          </div>
+        </section>
+
+        <section class="hero-band">
+          <div class="hero-copy">
+            <p id="pageKicker">把模糊想法整理成可直接复制给 Codex 的调用请求。</p>
+            <div class="tag-row" id="tagRow"></div>
+          </div>
+          <div class="signal-board" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </section>
+
+        <section class="tool-grid">
+          <form class="prompt-form" id="promptForm">
+            <label>
+              <span>我的需求</span>
+              <textarea id="needInput" rows="8" placeholder="例如：我想做一个古风女子雨夜重逢的 15 秒短视频，画面要电影感，适合 Seedance。"></textarea>
+            </label>
+
+            <div class="field-grid">
+              <label>
+                <span>平台/模型</span>
+                <select id="platformInput">
+                  <option selected>gpt-5.5</option>
+                  <option>不指定</option>
+                  <option>Seedance</option>
+                  <option>Higgsfield</option>
+                  <option>即梦</option>
+                  <option>可灵</option>
+                  <option>Midjourney</option>
+                  <option>小红书</option>
+                  <option>抖音</option>
+                </select>
+              </label>
+              <label>
+                <span>画幅比例</span>
+                <select id="ratioInput">
+                  <option>9:16</option>
+                  <option>16:9</option>
+                  <option>1:1</option>
+                  <option>4:5</option>
+                  <option>不指定</option>
+                </select>
+              </label>
+              <label>
+                <span>视频时长</span>
+                <input id="durationInput" type="text" placeholder="例如：15秒 / 30秒" />
+              </label>
+              <label>
+                <span>风格</span>
+                <input id="styleInput" type="text" placeholder="例如：电影感、真实电商、古风唯美" />
+              </label>
+            </div>
+
+            <label>
+              <span>补充要求</span>
+              <input id="extraInput" type="text" placeholder="例如：每一镜都能单独复制；输出负面约束；给出优化理由" />
+            </label>
+
+            <div class="actions">
+              <button class="primary-button" id="generateBtn" type="submit">提交给 AI</button>
+              <button class="secondary-button" id="clearBtn" type="button">清空</button>
+            </div>
+          </form>
+
+          <section class="output-panel" aria-live="polite">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" id="resultMeta">等待输入</p>
+                <h3>AI 输出结果</h3>
+              </div>
+              <button class="copy-button" id="copyPromptBtn" type="button">复制</button>
+            </div>
+            <textarea id="outputText" rows="18" spellcheck="false"></textarea>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

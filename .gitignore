@@ -1,0 +1,7 @@
+config.local.json
+.env
+.env.local
+server-out.log
+server-err.log
+node_modules/
+*.zip

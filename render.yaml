@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-master-share-site
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
+    envVars:
+      - key: AI_MASTER_PASSWORD
+        sync: false
+      - key: OPENAI_API_BASE
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        sync: false
+      - key: FALLBACK_MODELS
+        sync: false
+      - key: COOKIE_SECURE
+        value: "true"

@@ -1,0 +1,40 @@
+ai大师共享版网站：互联网部署说明
+
+这个版本适合部署到支持 Node.js 的云平台或服务器。
+
+一、部署包
+
+使用这个文件夹或 zip 上传：
+ai-master-share-site-deploy
+ai-master-share-site-deploy.zip
+
+部署包里不会包含 config.local.json，因此不会把你的本地 API Key 一起上传。
+
+二、云平台需要设置的环境变量
+
+AI_MASTER_PASSWORD=你想给别人使用的访问密码
+OPENAI_API_BASE=https://macode.cloud/v1
+OPENAI_API_KEY=你的 API Key
+AI_MODEL=gpt-5.5
+FALLBACK_MODELS=gpt-5.5
+COOKIE_SECURE=true
+
+可选：
+MAX_KNOWLEDGE_CHARS=9000
+TEMPERATURE=0.7
+
+三、启动命令
+
+npm start
+
+四、注意事项
+
+1. 不要上传 config.local.json。
+2. 不要把 API Key 写进网页代码里。
+3. 网站有密码登录，但别人使用时会消耗你的 API Key 额度。
+4. 得到公网网址后，把网址和访问密码发给别人即可。
+5. 如果平台提示模型无权限，需要把 AI_MODEL 改成 macode.cloud 实际支持的模型名。
+
+五、推荐部署方式
+
+选择任意支持 Node.js 的平台即可。常见选择包括 Render、Railway、Fly.io、VPS 宝塔面板、腾讯云轻量服务器、阿里云 ECS。
